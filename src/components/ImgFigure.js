@@ -29,8 +29,8 @@ class ImgFigure extends React.Component {
     }
 
     if (this.props.arrange.rotate) {
-      ['Moz', 'ms', 'Webkit', ''].forEach(function (value) {
-        styleObj[value + 'Transform'] = 'rotate(' + this.props.arrange.rotate + 'deg)';
+      ['MozTransform', 'msTransform', 'WebkitTransform', 'transform'].forEach(function (value) {
+        styleObj[value] = 'rotate(' + this.props.arrange.rotate + 'deg)';
       }.bind(this));
     }
 

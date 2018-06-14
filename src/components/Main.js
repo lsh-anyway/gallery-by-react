@@ -4,7 +4,8 @@ require('styles/App.sass');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ImageFigure from './ImgFigure';
-import { getRangeRandom, get30DegRandom } from './util'
+import ControllerUnit from './ControllerUnit';
+import { getRangeRandom, get30DegRandom } from './util';
 
 // 获取图片相关数据
 let imageDatas = require('../data/imageDatas.json');
@@ -217,6 +218,8 @@ class AppComponent extends React.Component {
       }
 
       imgFigures.push(<ImageFigure data={value} key={index} ref={imgFigure => this['_imgFigure' + index] = imgFigure} arrange={this.state.imgsArrangeArr[index]} inverse={this.inverse(index)} center={this.center(index)}/>);
+
+      controllerUnit.push(<ControllerUnit key={index} arrange={this.state.imgsArrangeArr[index]} inverse={this.inverse(index)} center={this.center(index)}/>);
     }.bind(this));
 
     return (
